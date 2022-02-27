@@ -1,0 +1,150 @@
+
+.box {
+  display: flex;
+  width: 100%;
+  background-color: #1a1c28;
+  height: auto;
+}
+.item {
+  width: 150px;
+  height: 150px;
+}
+.item:nth-of-type(1) {
+  background-color: #bf4470;
+}
+.item:nth-of-type(2) { 
+  background-color: #ffa400; 
+}
+.item:nth-of-type(3) {
+  background-color: #07a787;
+}
+
+/* flex-direction có 4 giá trị bao gồm: row, row-reverse, column và column reverse. */
+/* Flex-wrap: Cho phép các items tự động xuống hàng hoặc vẫn 
+luôn nằm trên cùng một hàng khi kích thước container thay đổi */
+/* Flex-wrap có 3 giá trị đó là wrap, nowrap và wrap-reverse. */
+/* Mặc định là nowrap nên các bạn không cần phải set. 
+Khi chúng ta resize trình duyệt lại nếu các bạn sử dụng thuộc tính flex-wrap: nowrap thì
+các items sẽ tự động co lại cho chớ không có rớt xuống hàng,
+điều này dễ làm cho content bên trong(nếu có) bị ép lại có thể gây xấu giao diện. */
+/* Lâu lâu các bạn có thấy một số người dùng thuộc tính flex-flow: row wrap. 
+Thuộc tính này viết để gộp 2 thuộc tính flex-direction và flex-wrap lại nhé các bạn. 
+Nó như thế này flex-flow: flex-direction flex-wrap.
+ Ứng với flex-direction và flex-wrap các bạn thay giá trị tương ứng vào nhé */
+
+ /* # Align-self */
+/* Thuộc tính  này tương tự với thuộc tính align-items ở trên nhưng 
+khác ở chỗ là áp dụng riêng lẻ cho các phần tử mà bạn muốn thay đổi giá trị của nó. */
+/* Giả sử bạn có các phần tử đều là align-items: flex-start(mặc định)
+ nhưng bạn muốn thẻ div màu vàng ở giữa chứ không phải ở trên thì lúc này các bạn chỉ cần
+  css cho thẻ div màu vàng align-self: center là được. */
+
+  /* .box
+	.item
+	.item
+	.item */
+
+  .box {
+    display: flex;
+    width: 100%;
+    height: 400px;
+    background-color: #1a1c28;
+  }
+  .item {
+    width: 150px;
+    height: 150px;
+  }
+  .item:nth-of-type(1) {
+    background-color: #bf4470;
+  }
+  .item:nth-of-type(2) { 
+    background-color: #ffa400;
+    align-self: flex-end;
+  }
+  .item:nth-of-type(3) {
+    background-color: #07a787;
+  }
+
+  /* ORDER */
+  /* Thuộc tính này cho phép đổi vị trí hiển thị của các phần tử */
+  /* .box
+	.item order 0
+	.item order 1
+	.item order 0 */
+
+  .box {
+    display: flex;
+    width: 100%;
+    height: 800px;
+    background-color: #1a1c28;
+    flex-direction: column;
+  }
+  .item {
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+    text-align: center;
+    font-size: 29px;
+    color: white;
+  }
+  .item:nth-of-type(1) {
+    background-color: #bf4470;
+  }
+  .item:nth-of-type(2) { 
+    background-color: #ffa400;
+    order: 1;
+  }
+  .item:nth-of-type(3) {
+    background-color: #07a787;
+  }
+
+  /* # Flex-basis */
+  /* .box
+	.item 1
+	.item 2
+	.item 3
+	.item 4
+	.item 5
+	.item 6
+	.item 7
+	.item 8 */
+  .box {
+    display: flex;
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    background-color: #eee;
+    justify-content: space-between;
+    flex-direction: row; /* thay đổi thuộc tính này*/
+  }
+  .item {
+    flex-basis: 120px;/*thuộc tính này sẽ đổi tương ứng*/
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    color: white;
+    text-align: center;
+    word-wrap: break-word;
+    background-color: #ffa400;
+    margin: 5px;
+  }
+  
+
+  /* # Flex-grow */
+  /* Mặc định giá trị trong thuộc tính flex-grow là 0 */
+  /* Nghĩa là các phần tử sẽ không tự động co giãn kích thước khi 
+  chiều rộng của container bao ngoài thay đổi.  */
+
+  /* # Flex-shrink */
+  /* Thuộc tính này thì nó ngược lại so với thuộc tính flex-grow ở trên, 
+  nó không giãn ra mà lại co lại khi chúng ta thay đổi độ rộng của container xuống. 
+  Mặc định giá trị trong flex-shrink 
+  là 1 nghĩa là cho phép các phần tử co lại khi độ rộng container giảm xuống. */
+
+  /* # Flex
+Flex là viết tắt của 3 thuộc tính flex-grow flex-shrink và flex-basis.
+ Nó như thế này. flex: flex-grow flex-shrink flex-basis. 
+ Mặc định grow(0) shrink(1) và basis(auto). */
